@@ -1,4 +1,5 @@
-﻿#include"Vector.h"
+﻿#pragma once
+#include"Vector.h"
 
 template <typename T>
 Vector<T>::Vector<T>()
@@ -14,7 +15,7 @@ Vector<T>::Vector<T>(int size)
 	els = new T[buf_size];
 }
 template <typename T>
-Vector<T>::Vector<T>(const Vector & obj)
+Vector<T>::Vector<T>(const Vector<T> & obj)
 {
 	this->cur_size = obj.cur_size;
 	this->buf_size = obj.cur_size;
@@ -29,7 +30,7 @@ int Vector<T>::size()
 	return cur_size;
 }
 template <typename T>
-void Vector<T>::add(T el)
+void Vector<T>::add(T obj)
 {
 	if (buf_size == 0) {
 		buf_size = 4;
@@ -47,7 +48,7 @@ void Vector<T>::add(T el)
 			els = tmp;
 		}
 	}
-	els[cur_size++] = el;
+	els[cur_size++] = obj;
 }
 template <typename T>
 T & Vector<T>::operator[](int index)
@@ -58,11 +59,11 @@ template <typename T>
 void Vector<T>::print()
 {
 	for (int i = 0; i < cur_size; i++)
-		els[i].print();
+		//cout<<els[i];
 	cout << endl;
 }
 template <typename T>
-Vector<T> Vector<T>::operator=(const Vector& obj)
+Vector<T> Vector<T>::operator=(const Vector<T>& obj)
 {
 	this->cur_size = obj.cur_size;
 	this->buf_size = obj.cur_size;
@@ -90,65 +91,3 @@ Vector<T>::~Vector()
 //	return os;
 //}
 
-istream & operator>>(istream & is, Auto & obj)
-{
-	is >> obj.company >> obj.salon >> obj.station;
-	return is;
-}
-
-ostream & operator<<(ostream & os, Auto obj)
-{
-	os << "Company: " << obj.company << " Salon: " << obj.salon << " Station: " << obj.station << endl;
-	return os;
-}
-
-Auto::Auto()
-{
-	company = "";
-	salon = "";
-	station = "";
-}
-
-Auto::Auto(string co, string s, string st)
-{
-	company = co;
-	salon = s;
-	station = st;
-}
-
-void Auto::setCompany(string company)
-{
-	this->company = company;
-}
-
-void Auto::setSalon(string salon)
-{
-	this->salon = salon;
-}
-
-void Auto::setStation(string station)
-{
-	this->station = station;
-}
-
-string Auto::getCompany()
-{
-	return company;
-}
-
-string Auto::getSalon()
-{
-	return salon;
-}
-
-string Auto::getStation()
-{
-	return station;
-}
-
-void Auto::enter()
-{
-	getline(cin, company, '\n');
-	getline(cin, salon, '\n');
-	getline(cin, station, '\n');
-}

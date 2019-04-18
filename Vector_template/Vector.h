@@ -18,10 +18,10 @@ private:
 public:
 	Vector();
 	Vector(int size);
-	Vector(const Vector&obj);
-	Vector operator=(const Vector&obj);
+	Vector(const Vector<T>&obj);
+	Vector operator=(const Vector<T>&obj);
 	int size();
-	void add(T el);
+	void add(T obj);
 	T & operator[](int index);
 	void print();
 	~Vector();
@@ -35,26 +35,5 @@ public:
 //ostream& operator<<(ostream& os, T obj);
 
 
-class Auto {
-private:
-	string company;
-	string salon;
-	string station;
-public:
-	Auto();
-	Auto(string co, string s, string st);
 
-	void setCompany(string company);
-	void setSalon(string salon);
-	void setStation(string station);
 
-	string getCompany();
-	string getSalon();
-	string getStation();
-
-	void enter();
-	friend istream& operator>>(istream& is, Auto &obj);
-	friend ostream& operator<<(ostream& os, Auto obj);
-};
-istream& operator>>(istream& is, Auto &obj);
-ostream& operator<<(ostream& os, Auto obj);
