@@ -35,5 +35,3 @@ public:
 //ostream& operator<<(ostream& os, T obj);
 
 
-
-
