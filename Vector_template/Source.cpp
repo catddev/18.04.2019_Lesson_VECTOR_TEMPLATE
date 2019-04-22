@@ -35,6 +35,10 @@ int main() {
 	//for (int i = 0; i < v.size(); i++)
 		//cout << v[i] << endl << endl;
 
+	v(Auto("000", "111", "222"));//через оператор круглых скобок - вызова функции
+	v.print();
+
+
 	system("pause");
 	return 0;
 }

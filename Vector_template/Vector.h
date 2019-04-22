@@ -21,10 +21,11 @@ private:
 public:
 	Vector();
 	Vector(int size);
-	Vector(const Vector<T>&obj);
+	Vector(const Vector&obj);
 	Vector operator=(const Vector<T>&obj);
 	int size();
 	void add(T obj);
+	void operator()(T v);
 	T & operator[](int index);
 	void print();
 	~Vector();
@@ -53,7 +54,7 @@ inline Vector<T>::Vector(int size)
 	els = new T[buf_size];
 }
 template <typename T>
-inline Vector<T>::Vector(const Vector<T> & obj)
+inline Vector<T>::Vector(const Vector & obj)
 {
 	this->cur_size = obj.cur_size;
 	this->buf_size = obj.cur_size;
@@ -89,6 +90,12 @@ inline void Vector<T>::add(T obj)
 	els[size()] = obj;
 	cur_size += sizeof(obj);
 }
+template<typename T>
+inline void Vector<T>::operator()(T v)
+{
+	for (int i = 0; i < size(); i++)
+		els[i] = v;
+}
 template <typename T>
 inline T & Vector<T>::operator[](int index)
 {
@@ -102,7 +109,7 @@ inline void Vector<T>::print()
 	cout << endl;
 }
 template <typename T>
-inline Vector<T> Vector<T>::operator=(const Vector<T>& obj)
+inline Vector<T> Vector<T>::operator=(const Vector& obj)
 {
 	this->cur_size = obj.cur_size;
 	this->buf_size = obj.cur_size;
