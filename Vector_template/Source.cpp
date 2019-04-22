@@ -19,7 +19,7 @@ int main() {
 	//class
 	ifstream in_file("in.txt");
 	Auto tmp;
-	Vector<class Auto> v;
+	Vector<Auto> v;
 
 	while (!in_file.eof()) {
 		//tmp.enter();

@@ -89,6 +89,25 @@ inline void Vector<T>::add(T obj)
 	}
 	els[size()] = obj;
 	cur_size += sizeof(obj);
+
+	//if (buf_size == 0)
+	//{
+	//	buf_size = 4;
+	//	els = new T[buf_size];
+	//}
+	//else
+	//{
+	//	if (cur_size == buf_size) {
+	//		buf_size *= 2;
+	//		T *tmp = new T[buf_size];
+
+	//		for (int i = 0; i < cur_size; i++)
+	//			tmp[i] = els[i];
+	//		delete[] els;
+	//		els = tmp;
+	//	}
+	//}
+	//els[cur_size++] = obj;
 }
 template<typename T>
 inline void Vector<T>::operator()(T v)
