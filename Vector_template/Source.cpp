@@ -5,19 +5,21 @@
 
 int main() {
 
-	//int tmp;
-	//Vector<int> v;
+	Vector<double> v1;
+	v1.add(2.7);
+	v1.add(6.3);
+	v1.add(7.0);
+	//cout << "size test" << v1.size() << "!!!!!!" << endl; //
+	//v1.print();
+
+	for (int i = 0; i < v1.size(); i++)
+		cout << v1[i] << endl;
+	cout << endl;
+
+	//class
+	ifstream in_file("in.txt");
 	Auto tmp;
 	Vector<class Auto> v;
-
-	ifstream in_file("in.txt");
-	/*while (!in_file.eof()) {
-		in_file >> tmp;
-		v.add(tmp);
-	}*/
-
-	/*for (int i = 0; i < v.size(); i++)
-		cout << v[i] << endl;*/
 
 	while (!in_file.eof()) {
 		//tmp.enter();
@@ -30,8 +32,8 @@ int main() {
 	v.print();
 
 	//через индексы
-	/*for (int i = 0; i < v.size()/sizeof(tmp); i++)
-		cout << v[i] << endl << endl;*/
+	//for (int i = 0; i < v.size(); i++)
+		//cout << v[i] << endl << endl;
 
 	system("pause");
 	return 0;
