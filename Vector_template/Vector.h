@@ -123,7 +123,7 @@ inline T & Vector<T>::operator[](int index)
 template <typename T>
 inline void Vector<T>::print()
 {
-	for (int i = 0; i < cur_size / sizeof(els[0]); i++)//вместо T obj берем els[0] размер
+	for (int i = 0; i < cur_size / sizeof(els[0]); i++)//вместо T obj берем els[0] размер или sizeof(T)
 		cout << els[i] << endl;
 	cout << endl;
 }
