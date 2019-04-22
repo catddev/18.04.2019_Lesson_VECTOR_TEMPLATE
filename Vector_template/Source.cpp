@@ -27,7 +27,7 @@ int main() {
 		//cout << tmp;
 		v.add(tmp);
 	}
-
+	v.add(Auto("aaa", "bbb", "ccc"));// задаем класс Авто сами, без файла
 	//через метод
 	v.print();
 
