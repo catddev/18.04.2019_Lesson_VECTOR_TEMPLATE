@@ -1,4 +1,4 @@
-#include"Auto.h"
+﻿#include"Auto.h"
 
 istream & operator>>(istream & is, Auto & obj)
 {

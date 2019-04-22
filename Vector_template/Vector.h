@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include<iostream>
 #include <iomanip>
 #include<Windows.h>
@@ -38,7 +38,7 @@ public:
 //ostream& operator<<(ostream& os, T obj);
 
 
-//inline означает что метод встраеваемый
+//inline РѕР·РЅР°С‡Р°РµС‚ С‡С‚Рѕ РјРµС‚РѕРґ РІСЃС‚СЂР°РµРІР°РµРјС‹Р№
 template <typename T>
 Vector<T>::Vector<T>()
 {
@@ -65,13 +65,13 @@ Vector<T>::Vector<T>(const Vector<T> & obj)
 template <typename T>
 int Vector<T>::size()
 {
-	return cur_size/sizeof(T);//здесь обязательно делить на кол-во занимаемых передаваемым объектом байтов, иначе возвращает не кол-во элементов в векторе, а заполненную память
+	return cur_size/sizeof(T);//Р·РґРµСЃСЊ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґРµР»РёС‚СЊ РЅР° РєРѕР»-РІРѕ Р·Р°РЅРёРјР°РµРјС‹С… РїРµСЂРµРґР°РІР°РµРјС‹Рј РѕР±СЉРµРєС‚РѕРј Р±Р°Р№С‚РѕРІ, РёРЅР°С‡Рµ РІРѕР·РІСЂР°С‰Р°РµС‚ РЅРµ РєРѕР»-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РІРµРєС‚РѕСЂРµ, Р° Р·Р°РїРѕР»РЅРµРЅРЅСѓСЋ РїР°РјСЏС‚СЊ
 }
 template <typename T>
 void Vector<T>::add(T obj)
 {
 	if (buf_size == 0) {
-		buf_size = sizeof(obj) * 4;//размер памяти, отталкиваясь от того, сколько места занимает один объект передаваемого класса
+		buf_size = sizeof(obj) * 4;//СЂР°Р·РјРµСЂ РїР°РјСЏС‚Рё, РѕС‚С‚Р°Р»РєРёРІР°СЏСЃСЊ РѕС‚ С‚РѕРіРѕ, СЃРєРѕР»СЊРєРѕ РјРµСЃС‚Р° Р·Р°РЅРёРјР°РµС‚ РѕРґРёРЅ РѕР±СЉРµРєС‚ РїРµСЂРµРґР°РІР°РµРјРѕРіРѕ РєР»Р°СЃСЃР°
 		els = new T[buf_size];
 	}
 	else
@@ -97,7 +97,7 @@ T & Vector<T>::operator[](int index)
 template <typename T>
 void Vector<T>::print()
 {
-	for (int i = 0; i < cur_size / sizeof(els[0]); i++)//вместо T obj берем els[0] размер
+	for (int i = 0; i < cur_size / sizeof(els[0]); i++)//РІРјРµСЃС‚Рѕ T obj Р±РµСЂРµРј els[0] СЂР°Р·РјРµСЂ
 		cout << els[i] << endl;
 	cout << endl;
 }
